@@ -3,6 +3,20 @@
   --accent: #f7d116;
   --cv-blue: #003893;
   --cv-red: #cf2027;
+  /* soft soulful serif — the morna register — over a warm humanist sans */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-text: 'Albert Sans', 'Helvetica Neue', sans-serif;
+}
+
+#capeverde .splash-name {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+#capeverde .gallery-head h3,
+#capeverde .moment figcaption h4,
+#capeverde .score-head {
+  font-weight: 900;
 }
 
 #capeverde .splash {

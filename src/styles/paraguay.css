@@ -2,6 +2,22 @@
 #paraguay {
   --accent: #d52b1e;
   --py-blue: #0038a8;
+  /* sharp condensed oblique — the South American shirt-set register */
+  --font-display: 'Saira Condensed', 'Arial Narrow', sans-serif;
+  --font-text: 'Saira', 'Helvetica Neue', sans-serif;
+}
+
+#paraguay .splash-name {
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+#paraguay .gallery-head h3,
+#paraguay .moment figcaption h4,
+#paraguay .score-head {
+  font-weight: 800;
+  font-style: italic;
 }
 
 /* light zone: text flips dark inside this section */

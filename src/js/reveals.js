@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // accent color applied to the fixed nav dots while each zone is active
 const ZONE_ACCENTS = {
-  home: '#c9a227',
+  home: '#ffb84d',
   capeverde: '#f7d116',
   paraguay: '#d52b1e',
   drcongo: '#f7d618',
@@ -14,14 +14,14 @@ const ZONE_ACCENTS = {
 };
 
 export function setupReveals() {
-  setupHomeIntro();
   setupSplashes();
   setupNarratives();
   setupCounters();
   setupZoneMorph();
 }
 
-function setupHomeIntro() {
+// grand hero entrance, played once the loader lifts away
+export function buildHomeIntro() {
   if (prefersReducedMotion) {
     document
       .querySelectorAll('.ticker-real')
@@ -29,20 +29,26 @@ function setupHomeIntro() {
     document
       .querySelectorAll('.ticker-pred')
       .forEach((el) => el.classList.add('is-struck'));
-    return;
+    return null;
   }
 
-  gsap.from('.home-hero > *', {
-    y: 40,
+  const tl = gsap.timeline({ paused: true });
+
+  tl.from('.home-kicker, .home-title-line, .home-thesis', {
+    y: 70,
     opacity: 0,
-    duration: 1,
-    ease: 'power3.out',
-    stagger: 0.15,
-    delay: 0.2,
-  });
+    duration: 1.1,
+    ease: 'power4.out',
+    stagger: 0.14,
+  })
+    .from(
+      '.home-ticker, .scroll-cue',
+      { opacity: 0, y: 30, duration: 0.8, ease: 'power2.out' },
+      '-=0.5'
+    )
+    .addLabel('ticker', '-=0.2');
 
   const rows = gsap.utils.toArray('.ticker-row');
-  const tl = gsap.timeline({ delay: 1.2 });
   rows.forEach((row) => {
     const strike = row.querySelector('.ticker-pred');
     const real = row.querySelector('.ticker-real');
@@ -55,6 +61,8 @@ function setupHomeIntro() {
       )
       .to({}, { duration: 0.3 }); // beat between rows
   });
+
+  return tl;
 }
 
 function setupSplashes() {

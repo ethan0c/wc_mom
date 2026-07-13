@@ -5,10 +5,11 @@ import './styles/paraguay.css';
 import './styles/drcongo.css';
 import './styles/outro.css';
 
+import gsap from 'gsap';
 import { stories } from './js/data.js';
-import { initSmoothScroll } from './js/smooth.js';
+import { initSmoothScroll, prefersReducedMotion } from './js/smooth.js';
 import { setupGalleries } from './js/galleries.js';
-import { setupReveals } from './js/reveals.js';
+import { setupReveals, buildHomeIntro } from './js/reveals.js';
 
 // ---------- render moment galleries from data ----------
 function renderGalleries() {
@@ -88,10 +89,56 @@ function renderStarRing() {
   }).join('');
 }
 
+// ---------- splash loader → grand welcome ----------
+function runLoader(lenis) {
+  const loader = document.getElementById('loader');
+  const intro = buildHomeIntro();
+
+  if (prefersReducedMotion) {
+    loader.remove();
+    return;
+  }
+
+  lenis?.stop();
+
+  let dismissed = false;
+  const dismiss = () => {
+    if (dismissed) return;
+    dismissed = true;
+
+    gsap
+      .timeline()
+      .to('.loader-ball', {
+        rotation: '+=180',
+        scale: 1.4,
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.in',
+      })
+      .to('.loader-word', { opacity: 0, duration: 0.3 }, '<')
+      .to(loader, { yPercent: -100, duration: 0.9, ease: 'power4.inOut' }, '-=0.15')
+      .add(() => {
+        loader.remove();
+        lenis?.start();
+        intro?.play();
+      }, '-=0.45');
+  };
+
+  // dismiss when everything is loaded, with a floor so the ball gets a moment
+  // and a ceiling so a slow font CDN can't strand the loader
+  const MIN_SHOW = 1200;
+  const start = performance.now();
+  window.addEventListener('load', () => {
+    setTimeout(dismiss, Math.max(0, MIN_SHOW - (performance.now() - start)));
+  });
+  setTimeout(dismiss, 4000);
+}
+
 renderGalleries();
 renderScoreboards();
 renderStarRing();
 
-initSmoothScroll();
+const lenis = initSmoothScroll();
 setupGalleries();
 setupReveals();
+runLoader(lenis);

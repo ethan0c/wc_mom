@@ -1,11 +1,37 @@
 /* ===================== Tokens & reset ===================== */
+@font-face {
+  font-family: 'FIFA26';
+  src: url('./fonts/WorldCup26-Regular.otf') format('opentype');
+  font-display: swap;
+  /* digits only — letters and currency marks fall back to the display face */
+  unicode-range: U+0030-0039;
+}
+
 :root {
-  --bg: #0b0b0f;
+  --bg: #1c0b2b;
   --ink: #f5f2ea;
   --gold: #c9a227;
+  --amber: #ffb84d;
+  --wc-maroon: #8a1538;
+  --wc-red: #e0154a;
+  --wc-green: #00875a;
+  --wc-blue: #2f6ff2;
   --accent: var(--gold);
   --font-display: 'Anton', 'Arial Narrow', sans-serif;
-  --font-text: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+  /* tournament-brand face for home, outro, loader and gate */
+  --font-brand: 'Unbounded', 'Arial Black', sans-serif;
+  --font-text: 'Bricolage Grotesque', 'Helvetica Neue', sans-serif;
+  /* jersey-number font (user-supplied) for every stat, score and minute mark */
+  --font-num: 'FIFA26', 'Anton', sans-serif;
+}
+
+/* sections re-declare their own display/text faces; make body copy follow */
+.story,
+.story .narrative,
+.story .moment figcaption p,
+.story .splash-sub,
+.story .score-verdict {
+  font-family: var(--font-text);
 }
 
 *,
@@ -83,7 +109,7 @@ a {
   }
 
   .gate-inner h1 {
-    font-family: var(--font-display);
+    font-family: var(--font-brand);
     font-size: clamp(2rem, 9vw, 3rem);
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -112,7 +138,7 @@ a {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1.5px solid var(--ink);
+  border: 1.5px solid currentColor;
   opacity: 0.45;
   transition: opacity 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
@@ -204,7 +230,7 @@ a {
 
 .chips b {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-num);
   font-size: 2rem;
   font-weight: 400;
   color: var(--accent);
@@ -339,7 +365,7 @@ a {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  font-family: var(--font-display);
+  font-family: var(--font-num);
   font-size: 1.3rem;
   letter-spacing: 0.05em;
   padding: 0.15rem 0.7rem;
@@ -446,7 +472,7 @@ a {
 }
 
 .score-side b {
-  font-family: var(--font-display);
+  font-family: var(--font-num);
   font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight: 400;
   line-height: 1;

@@ -3,6 +3,22 @@
   --accent: #f7d618;
   --cd-sky: #007fff;
   --cd-red: #ce1021;
+  /* angular, Afro-modern geometry over a clean grotesk */
+  --font-display: 'Syne', 'Futura', sans-serif;
+  --font-text: 'Hanken Grotesk', 'Helvetica Neue', sans-serif;
+}
+
+#drcongo .splash-name {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  /* Syne runs much wider than the other display faces */
+  font-size: clamp(3.5rem, 10vw, 10.5rem);
+}
+
+#drcongo .gallery-head h3,
+#drcongo .moment figcaption h4,
+#drcongo .score-head {
+  font-weight: 800;
 }
 
 #drcongo .splash {
@@ -24,7 +40,7 @@
   background: var(--cd-red);
   border-top: clamp(12px, 2vh, 22px) solid var(--accent);
   border-bottom: clamp(12px, 2vh, 22px) solid var(--accent);
-  opacity: 0.32;
+  opacity: 0.9;
 }
 
 /* kuba-cloth inspired angular repeat as ambient texture */

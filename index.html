@@ -8,14 +8,38 @@
       name="description"
       content="Four weeks in 2026 when every model, ranking and market value failed. The stories the stats couldn't predict."
     />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,8 88,32 88,72 50,96 12,72 12,32' fill='none' stroke='%23c9a227' stroke-width='8'/%3E%3C/svg%3E"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Unbounded:wght@500;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Fraunces:opsz,wght@9..144,600;9..144,900&family=Albert+Sans:wght@400;500;700&family=Saira+Condensed:wght@700;800&family=Saira:wght@400;500&family=Syne:wght@700;800&family=Hanken+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- Splash loader: rotating ball, lifts away into the hero -->
+    <div id="loader" aria-hidden="true">
+      <svg class="loader-ball" viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="3" />
+        <polygon points="60,42 77,54 71,74 49,74 43,54" fill="currentColor" />
+        <path
+          d="M60 42V16M77 54l24-8M71 74l16 20M49 74L33 94M43 54 19 46"
+          stroke="currentColor"
+          stroke-width="3"
+        />
+        <path
+          d="M38 20a54 54 0 0 1 44 0M107 43a54 54 0 0 1 6 26M97 98a54 54 0 0 1-20 12M43 110a54 54 0 0 1-20-12M7 69a54 54 0 0 1 6-26"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+      </svg>
+      <p class="loader-word">Moments of Madness</p>
+    </div>
+
     <!-- Desktop-only gate (shown < 1024px via CSS) -->
     <div id="gate" role="note">
       <div class="gate-inner">
@@ -36,27 +60,40 @@
 
     <main id="site">
       <!-- ============ HOME / INTRO ============ -->
-      <section id="home" class="zone" data-bg="#0b0b0f" data-ink="#f5f2ea">
+      <section id="home" class="zone" data-bg="#1c0b2b" data-ink="#f5f2ea">
         <div class="home-field" aria-hidden="true">
-          <div class="home-hexes"></div>
-          <svg class="home-circle" viewBox="0 0 800 800" fill="none">
-            <circle cx="400" cy="400" r="260" stroke="currentColor" stroke-width="2" />
-            <circle cx="400" cy="400" r="6" fill="currentColor" />
-            <line x1="0" y1="400" x2="140" y2="400" stroke="currentColor" stroke-width="2" />
-            <line x1="660" y1="400" x2="800" y2="400" stroke="currentColor" stroke-width="2" />
+          <div class="home-mesh">
+            <i class="blob blob-maroon"></i>
+            <i class="blob blob-red"></i>
+            <i class="blob blob-green"></i>
+            <i class="blob blob-blue"></i>
+          </div>
+          <svg class="home-ribbons" viewBox="0 0 1440 900" preserveAspectRatio="none" fill="none">
+            <defs>
+              <linearGradient id="rib" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#ffb84d" />
+                <stop offset="0.5" stop-color="#e0154a" />
+                <stop offset="1" stop-color="#2f6ff2" />
+              </linearGradient>
+            </defs>
+            <path d="M-60 640C280 480 420 760 780 560S1240 430 1520 590" stroke="url(#rib)" stroke-width="2.5" opacity="0.55" />
+            <path d="M-60 700C300 540 460 810 820 615S1260 480 1520 650" stroke="url(#rib)" stroke-width="1.5" opacity="0.35" />
+            <path d="M-60 180C340 320 560 60 900 220S1300 340 1520 200" stroke="url(#rib)" stroke-width="1.5" opacity="0.25" />
           </svg>
+          <div class="home-hexes"></div>
           <div class="home-floodlight"></div>
         </div>
 
         <div class="home-hero">
-          <p class="home-kicker">Summer 2026 · One tournament · Zero warning</p>
+          <p class="home-kicker">North America · Summer 2026</p>
           <h1 class="home-title">
             <span class="home-title-line">Moments</span>
             <span class="home-title-line">of<em> Madness</em></span>
           </h1>
           <p class="home-thesis">
-            Rankings, squad values, expected goals — every measurable thing said these matches
-            were already decided. <strong>The stats don't explain what happened.</strong>
+            You can rank every squad, price every player, model every match. People did.
+            Then the tournament started, and for four weeks
+            <strong>none of it explained a thing.</strong>
           </p>
         </div>
 
@@ -93,7 +130,7 @@
           <div class="cv-stripes" aria-hidden="true"><i></i><i></i><i></i></div>
           <p class="splash-kicker">Os Tubarões Azuis · The Blue Sharks</p>
           <h2 class="splash-name">Cape&nbsp;Verde</h2>
-          <p class="splash-sub">The smallest nation ever to reach the knockouts — at their first World Cup.</p>
+          <p class="splash-sub">No country this small had ever played in a World Cup, let alone survived one. Cape Verde did both in the same month.</p>
           <ul class="chips">
             <li><b>#70</b><span>FIFA ranking</span></li>
             <li><b>€22M</b><span>Squad value</span></li>
@@ -102,9 +139,9 @@
         </header>
 
         <div class="narrative">
-          <p class="line">Ten islands in the Atlantic. Half a million people.</p>
-          <p class="line">A team assembled from a diaspora scattered across three continents.</p>
-          <p class="line">They were never supposed to be here — <em>and then they refused to leave.</em></p>
+          <p class="line">Cape Verde is ten islands in the middle of the Atlantic, home to about as many people as a mid-sized city.</p>
+          <p class="line">Most of the squad grew up somewhere else — Lisbon, Rotterdam, the suburbs of Paris — sons of a diaspora that never stopped calling itself Cape Verdean.</p>
+          <p class="line">They arrived as the story everyone patted on the head. <em>They left as the team nobody could score against.</em></p>
         </div>
 
         <div class="gallery" data-story="capeverde">
@@ -128,7 +165,7 @@
           <div class="py-bands" aria-hidden="true"><i></i><i></i><i></i></div>
           <p class="splash-kicker">La Albirroja · Garra Guaraní</p>
           <h2 class="splash-name">Paraguay</h2>
-          <p class="splash-sub">Beat Germany on penalties with a quarter of the ball.</p>
+          <p class="splash-sub">They gave Germany the ball for two hours, then took the tie away from them in five kicks.</p>
           <ul class="chips">
             <li><b>#43</b><span>FIFA ranking</span></li>
             <li><b>€64M</b><span>Squad value</span></li>
@@ -137,9 +174,9 @@
         </header>
 
         <div class="narrative">
-          <p class="line">Germany had the ball. Germany had the names. Germany had the numbers.</p>
-          <p class="line">Paraguay had a low block, a goalkeeper on fire, and no interest in the script.</p>
-          <p class="line"><em>It turned out nerve was worth more than possession.</em></p>
+          <p class="line">Germany arrived with a squad worth more than Paraguay's entire domestic league, and for two hours it looked like it. They had the ball, the chances, the territory.</p>
+          <p class="line">What Paraguay had was harder to fit in a spreadsheet: a low block that never cracked, a goalkeeper who kept getting bigger, and a country's worth of stubbornness.</p>
+          <p class="line"><em>A hundred and twenty minutes of no, followed by five answers from the penalty spot.</em></p>
         </div>
 
         <div class="gallery" data-story="paraguay">
@@ -166,7 +203,7 @@
           </svg>
           <p class="splash-kicker">Les Léopards · Kinshasa rising</p>
           <h2 class="splash-name">DR&nbsp;Congo</h2>
-          <p class="splash-sub">Outplayed Portugal on every underlying number. The scoreboard never noticed.</p>
+          <p class="splash-sub">They did everything to Portugal except beat them. By the numbers, they did that too.</p>
           <ul class="chips">
             <li><b>#56</b><span>FIFA ranking</span></li>
             <li><b>€180M</b><span>Squad value</span></li>
@@ -175,9 +212,9 @@
         </header>
 
         <div class="narrative">
-          <p class="line">For once, the underdog won the stats.</p>
-          <p class="line">More shots, more touches in the box, more expected goals than Portugal.</p>
-          <p class="line"><em>The match ended level anyway. Even the numbers couldn't predict the numbers.</em></p>
+          <p class="line">Here is the strange one. DR Congo out-shot Portugal, out-created them, and spent more of the night in Portugal's box than Portugal did.</p>
+          <p class="line">By every number the analytics industry has invented, they won the match.</p>
+          <p class="line"><em>It finished 1–1. If the stats can't even call the games the underdog dominates, what exactly are they predicting?</em></p>
         </div>
 
         <div class="gallery" data-story="drcongo">
@@ -200,8 +237,8 @@
           <p class="outro-kicker">Full time</p>
           <h2 class="outro-title">Every model had them losing.<br /><em>Football didn't ask.</em></h2>
           <p class="outro-note">
-            Three nations, one summer, and a pile of predictions in the bin. Measure everything —
-            the game will still refuse to be forecast.
+            Three teams, four weeks, and every prediction model in the sport quietly walking
+            it back. Measure whatever you like. The game isn't listening.
           </p>
           <a class="outro-top" href="#home">Back to kickoff ↑</a>
         </div>
