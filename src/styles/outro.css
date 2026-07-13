@@ -1,0 +1,70 @@
+/* ===================== Outro ===================== */
+#outro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+#outro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(55% 40% at 50% 110%, rgba(201, 162, 39, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.outro-inner {
+  position: relative;
+  max-width: 56rem;
+  padding: 4rem 2rem;
+}
+
+.outro-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.outro-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 1.05;
+}
+
+.outro-title em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.outro-note {
+  max-width: 36rem;
+  margin: 2rem auto 0;
+  font-size: 1.15rem;
+  opacity: 0.8;
+}
+
+.outro-top {
+  display: inline-block;
+  margin-top: 3.5rem;
+  padding: 0.9rem 2.2rem;
+  border: 1px solid rgba(245, 242, 234, 0.35);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.outro-top:hover {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #0b0b0f;
+}

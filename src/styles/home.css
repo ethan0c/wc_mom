@@ -1,0 +1,200 @@
+/* ===================== Home / intro ===================== */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 5rem 2rem 7rem;
+}
+
+/* --- background field: hex panels, pitch circle, floodlight --- */
+.home-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-hexes {
+  position: absolute;
+  inset: 0;
+  /* original hexagon (ball-panel) outline pattern */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cg fill='none' stroke='%23f5f2ea' stroke-opacity='0.06'%3E%3Cpath d='M28 0.5 55.5 16.5v32L28 64.5 0.5 48.5v-32z'/%3E%3Cpath d='M28 64.5 55.5 80.5v32L28 128.5 0.5 112.5v-32z'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: radial-gradient(90% 80% at 50% 45%, black 30%, transparent 100%);
+}
+
+.home-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(72vh, 60vw);
+  color: rgba(245, 242, 234, 0.09);
+}
+
+.home-floodlight {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 45% at 50% -10%, rgba(201, 162, 39, 0.22) 0%, transparent 70%),
+    radial-gradient(45% 30% at 15% 110%, rgba(201, 162, 39, 0.08) 0%, transparent 70%),
+    radial-gradient(45% 30% at 85% 110%, rgba(201, 162, 39, 0.08) 0%, transparent 70%);
+}
+
+/* --- hero --- */
+.home-hero {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.home-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.home-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(5rem, 12.5vw, 13.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+}
+
+.home-title-line {
+  display: block;
+}
+
+.home-title em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.home-thesis {
+  max-width: 42rem;
+  margin: 2.25rem auto 0;
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.home-thesis strong {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* --- failed-predictions ticker --- */
+.home-ticker {
+  position: relative;
+  z-index: 2;
+  margin-top: 4.5rem;
+  width: min(46rem, 100%);
+}
+
+.ticker-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.9rem;
+  text-align: center;
+}
+
+.home-ticker ul {
+  list-style: none;
+  border-top: 1px solid rgba(245, 242, 234, 0.15);
+}
+
+.ticker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0.85rem 0.5rem;
+  border-bottom: 1px solid rgba(245, 242, 234, 0.15);
+  font-size: 1.05rem;
+}
+
+.ticker-pred {
+  position: relative;
+  opacity: 0.75;
+}
+
+/* strike-through drawn by GSAP scaling this line */
+.ticker-pred::after {
+  content: '';
+  position: absolute;
+  left: -0.35em;
+  right: -0.35em;
+  top: 52%;
+  height: 2px;
+  background: #d3402e;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s ease;
+}
+
+.ticker-pred.is-struck::after {
+  transform: scaleX(1);
+}
+
+.ticker-pred.is-struck {
+  opacity: 0.45;
+}
+
+.ticker-real {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  translate: 0.5rem 0;
+}
+
+/* --- scroll cue --- */
+.scroll-cue {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.scroll-cue i {
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(to bottom, var(--ink), transparent);
+  animation: cue-drop 1.8s ease-in-out infinite;
+}
+
+@keyframes cue-drop {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}

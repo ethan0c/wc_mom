@@ -1,0 +1,97 @@
+/* ===================== Paraguay — tricolor, ñandutí lace, warm light ===================== */
+#paraguay {
+  --accent: #d52b1e;
+  --py-blue: #0038a8;
+}
+
+/* light zone: text flips dark inside this section */
+#paraguay {
+  color: #231616;
+}
+
+#paraguay .splash {
+  background:
+    radial-gradient(80% 60% at 50% 40%, rgba(255, 255, 255, 0.75) 0%, transparent 70%),
+    #f4ede2;
+}
+
+/* ñandutí — radial "spiderweb lace" medallion, Paraguay's signature craft */
+.py-lace {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: min(95vh, 78vw);
+  aspect-ratio: 1;
+  z-index: 1;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23d52b1e' stroke-opacity='0.35'%3E%3Ccircle cx='200' cy='200' r='60'/%3E%3Ccircle cx='200' cy='200' r='100'/%3E%3Ccircle cx='200' cy='200' r='140'/%3E%3Ccircle cx='200' cy='200' r='180'/%3E%3Cg stroke-opacity='0.28'%3E%3Cpath d='M200 20V380M20 200H380M73 73l254 254M327 73L73 327'/%3E%3Cpath d='M200 20 327 73 380 200 327 327 200 380 73 327 20 200 73 73Z'/%3E%3C/g%3E%3Cg fill='%23d52b1e' fill-opacity='0.3' stroke='none'%3E%3Ccircle cx='200' cy='60' r='5'/%3E%3Ccircle cx='200' cy='340' r='5'/%3E%3Ccircle cx='60' cy='200' r='5'/%3E%3Ccircle cx='340' cy='200' r='5'/%3E%3Ccircle cx='101' cy='101' r='5'/%3E%3Ccircle cx='299' cy='101' r='5'/%3E%3Ccircle cx='101' cy='299' r='5'/%3E%3Ccircle cx='299' cy='299' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: contain;
+  animation: py-breathe 14s ease-in-out infinite;
+}
+
+@keyframes py-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.62;
+  }
+}
+
+/* flag tricolor pinned to the top edge of the splash */
+.py-bands {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.py-bands i {
+  height: 10px;
+}
+
+.py-bands i:nth-child(1) {
+  background: var(--accent);
+}
+
+.py-bands i:nth-child(2) {
+  background: #fff;
+}
+
+.py-bands i:nth-child(3) {
+  background: var(--py-blue);
+}
+
+/* light-theme adjustments for shared components */
+#paraguay .chips li {
+  border-color: rgba(35, 22, 22, 0.2);
+  border-top-color: var(--accent);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+#paraguay .moment-frame {
+  border-color: rgba(35, 22, 22, 0.25);
+  background:
+    repeating-linear-gradient(-45deg, rgba(35, 22, 22, 0.06) 0 1px, transparent 1px 14px),
+    rgba(255, 255, 255, 0.5);
+}
+
+#paraguay .moment-min {
+  color: #fff;
+}
+
+#paraguay .gallery-progress {
+  background: rgba(35, 22, 22, 0.15);
+}
+
+#paraguay .score-row,
+#paraguay .score-row:last-of-type {
+  border-color: rgba(35, 22, 22, 0.16);
+}

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moments of Madness — 2026 World Cup</title>
+    <meta
+      name="description"
+      content="Four weeks in 2026 when every model, ranking and market value failed. The stories the stats couldn't predict."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Desktop-only gate (shown < 1024px via CSS) -->
+    <div id="gate" role="note">
+      <div class="gate-inner">
+        <span class="gate-mark">⬡</span>
+        <h1>Moments of Madness</h1>
+        <p>This experience is built for a big screen.<br />Come back on a desktop.</p>
+      </div>
+    </div>
+
+    <!-- Side nav dots -->
+    <nav id="dots" aria-label="Sections">
+      <a href="#home" data-section="home"><span>Intro</span></a>
+      <a href="#capeverde" data-section="capeverde"><span>Cape Verde</span></a>
+      <a href="#paraguay" data-section="paraguay"><span>Paraguay</span></a>
+      <a href="#drcongo" data-section="drcongo"><span>DR Congo</span></a>
+      <a href="#outro" data-section="outro"><span>Outro</span></a>
+    </nav>
+
+    <main id="site">
+      <!-- ============ HOME / INTRO ============ -->
+      <section id="home" class="zone" data-bg="#0b0b0f" data-ink="#f5f2ea">
+        <div class="home-field" aria-hidden="true">
+          <div class="home-hexes"></div>
+          <svg class="home-circle" viewBox="0 0 800 800" fill="none">
+            <circle cx="400" cy="400" r="260" stroke="currentColor" stroke-width="2" />
+            <circle cx="400" cy="400" r="6" fill="currentColor" />
+            <line x1="0" y1="400" x2="140" y2="400" stroke="currentColor" stroke-width="2" />
+            <line x1="660" y1="400" x2="800" y2="400" stroke="currentColor" stroke-width="2" />
+          </svg>
+          <div class="home-floodlight"></div>
+        </div>
+
+        <div class="home-hero">
+          <p class="home-kicker">Summer 2026 · One tournament · Zero warning</p>
+          <h1 class="home-title">
+            <span class="home-title-line">Moments</span>
+            <span class="home-title-line">of<em> Madness</em></span>
+          </h1>
+          <p class="home-thesis">
+            Rankings, squad values, expected goals — every measurable thing said these matches
+            were already decided. <strong>The stats don't explain what happened.</strong>
+          </p>
+        </div>
+
+        <div class="home-ticker">
+          <p class="ticker-label">What the models said</p>
+          <ul>
+            <li class="ticker-row">
+              <span class="ticker-pred">Spain 3–0 Cape Verde</span>
+              <span class="ticker-real">FT&nbsp;0–0</span>
+            </li>
+            <li class="ticker-row">
+              <span class="ticker-pred">Germany 2–0 Paraguay</span>
+              <span class="ticker-real">Out on pens</span>
+            </li>
+            <li class="ticker-row">
+              <span class="ticker-pred">Portugal, comfortably</span>
+              <span class="ticker-real">Outplayed. 1–1</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span>Scroll</span>
+          <i></i>
+        </div>
+      </section>
+
+      <!-- ============ CAPE VERDE ============ -->
+      <section id="capeverde" class="zone story story-cv" data-bg="#04173b" data-ink="#f5f2ea">
+        <header class="splash">
+          <svg class="cv-stars" viewBox="0 0 400 400" aria-hidden="true">
+            <g class="cv-stars-ring"></g>
+          </svg>
+          <div class="cv-stripes" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p class="splash-kicker">Os Tubarões Azuis · The Blue Sharks</p>
+          <h2 class="splash-name">Cape&nbsp;Verde</h2>
+          <p class="splash-sub">The smallest nation ever to reach the knockouts — at their first World Cup.</p>
+          <ul class="chips">
+            <li><b>#70</b><span>FIFA ranking</span></li>
+            <li><b>€22M</b><span>Squad value</span></li>
+            <li><b>525K</b><span>Population</span></li>
+          </ul>
+        </header>
+
+        <div class="narrative">
+          <p class="line">Ten islands in the Atlantic. Half a million people.</p>
+          <p class="line">A team assembled from a diaspora scattered across three continents.</p>
+          <p class="line">They were never supposed to be here — <em>and then they refused to leave.</em></p>
+        </div>
+
+        <div class="gallery" data-story="capeverde">
+          <div class="gallery-pin">
+            <header class="gallery-head">
+              <h3>The moments</h3>
+              <p>Scroll to move through the run</p>
+            </header>
+            <div class="track"></div>
+            <div class="gallery-progress"><i></i></div>
+          </div>
+        </div>
+
+        <div class="scoreboard" data-story="capeverde"></div>
+      </section>
+
+      <!-- ============ PARAGUAY ============ -->
+      <section id="paraguay" class="zone story story-py" data-bg="#f4ede2" data-ink="#231616">
+        <header class="splash">
+          <div class="py-lace" aria-hidden="true"></div>
+          <div class="py-bands" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p class="splash-kicker">La Albirroja · Garra Guaraní</p>
+          <h2 class="splash-name">Paraguay</h2>
+          <p class="splash-sub">Beat Germany on penalties with a quarter of the ball.</p>
+          <ul class="chips">
+            <li><b>#43</b><span>FIFA ranking</span></li>
+            <li><b>€64M</b><span>Squad value</span></li>
+            <li><b>25%</b><span>Possession vs GER</span></li>
+          </ul>
+        </header>
+
+        <div class="narrative">
+          <p class="line">Germany had the ball. Germany had the names. Germany had the numbers.</p>
+          <p class="line">Paraguay had a low block, a goalkeeper on fire, and no interest in the script.</p>
+          <p class="line"><em>It turned out nerve was worth more than possession.</em></p>
+        </div>
+
+        <div class="gallery" data-story="paraguay">
+          <div class="gallery-pin">
+            <header class="gallery-head">
+              <h3>The moments</h3>
+              <p>Scroll to move through the run</p>
+            </header>
+            <div class="track"></div>
+            <div class="gallery-progress"><i></i></div>
+          </div>
+        </div>
+
+        <div class="scoreboard" data-story="paraguay"></div>
+      </section>
+
+      <!-- ============ DR CONGO ============ -->
+      <section id="drcongo" class="zone story story-cd" data-bg="#00284f" data-ink="#f8f4e6">
+        <header class="splash">
+          <div class="cd-diagonal" aria-hidden="true"></div>
+          <div class="cd-kuba" aria-hidden="true"></div>
+          <svg class="cd-star" viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M50 5 61 38h35L68 59l11 34-29-21-29 21 11-34L4 38h35z" />
+          </svg>
+          <p class="splash-kicker">Les Léopards · Kinshasa rising</p>
+          <h2 class="splash-name">DR&nbsp;Congo</h2>
+          <p class="splash-sub">Outplayed Portugal on every underlying number. The scoreboard never noticed.</p>
+          <ul class="chips">
+            <li><b>#56</b><span>FIFA ranking</span></li>
+            <li><b>€180M</b><span>Squad value</span></li>
+            <li><b>52</b><span>Years since last WC</span></li>
+          </ul>
+        </header>
+
+        <div class="narrative">
+          <p class="line">For once, the underdog won the stats.</p>
+          <p class="line">More shots, more touches in the box, more expected goals than Portugal.</p>
+          <p class="line"><em>The match ended level anyway. Even the numbers couldn't predict the numbers.</em></p>
+        </div>
+
+        <div class="gallery" data-story="drcongo">
+          <div class="gallery-pin">
+            <header class="gallery-head">
+              <h3>The moments</h3>
+              <p>Scroll to move through the run</p>
+            </header>
+            <div class="track"></div>
+            <div class="gallery-progress"><i></i></div>
+          </div>
+        </div>
+
+        <div class="scoreboard" data-story="drcongo"></div>
+      </section>
+
+      <!-- ============ OUTRO ============ -->
+      <section id="outro" class="zone" data-bg="#0b0b0f" data-ink="#f5f2ea">
+        <div class="outro-inner">
+          <p class="outro-kicker">Full time</p>
+          <h2 class="outro-title">Every model had them losing.<br /><em>Football didn't ask.</em></h2>
+          <p class="outro-note">
+            Three nations, one summer, and a pile of predictions in the bin. Measure everything —
+            the game will still refuse to be forecast.
+          </p>
+          <a class="outro-top" href="#home">Back to kickoff ↑</a>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
